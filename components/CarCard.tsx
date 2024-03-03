@@ -1,10 +1,9 @@
-"use client"
+"use client";
 import { CarProps } from "@/types";
 import { calculateCarRent, generateCarImageUrl } from "@/utils";
 import Image from "next/image";
 import React, { useState } from "react";
 import { CarDetails, CustomButton } from ".";
-
 
 interface CarCardProps {
   car: CarProps;
@@ -61,12 +60,16 @@ const CarCard = ({ car }: CarCardProps) => {
             title="View More"
             containerStyles="w-full py-[16px] rounded-full bg-black"
             textStyles="text-white text-[14px] leading-[17px] font-bold"
-            rightIcon = "/right-arrow.svg"
+            rightIcon="/right-arrow.svg"
             handleClick={() => setIsOpen(true)}
           />
         </div>
       </div>
-      <CarDetails isOpen = {isOpen} closeModal = {() => setIsOpen(false)} car ={car}/>
+      <CarDetails
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />
     </div>
   );
 };
